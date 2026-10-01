@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Invisible Woman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand" aria-label="The Invisible Woman"><span aria-hidden="true">🪔</span> The Invisible Woman</div>
+    <nav class="bar">
+      <button class="nav" id="navHome" data-i18n="home"></button>
+      <button class="nav" id="navHelp" data-i18n="helpNav"></button>
+      <label class="sr" for="lang" data-i18n="language"></label>
+      <select id="lang"><option value="ta">தமிழ்</option><option value="en">English</option></select>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME + ASK -->
+    <section id="home" class="view">
+      <div class="card hero">
+        <h1 data-i18n="welcome"></h1>
+        <p class="lead" data-i18n="askPrompt"></p>
+        <button id="mic" class="mic" aria-label="Speak"><span class="micIcon" aria-hidden="true">🎤</span><span id="micLabel" data-i18n="mic"></span></button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <label class="sr" for="q" data-i18n="askPrompt"></label>
+        <textarea id="q" rows="3" data-i18n-ph="placeholder"></textarea>
+        <div class="row">
+          <button id="askBtn" class="btn primary" data-i18n="ask"></button>
+          <button id="demoBtn" class="btn ghost" data-i18n="demo"></button>
+        </div>
+      </div>
+
+      <!-- AI RESPONSE -->
+      <div id="answer" class="card" hidden>
+        <h2 data-i18n="answerTitle"></h2>
+        <p id="answerText" class="big" aria-live="polite"></p>
+        <div class="row">
+          <button id="readAnswer" class="btn primary" data-i18n="read"></button>
+          <button id="dontGet" class="btn warm" data-i18n="dontGet"></button>
+          <button id="showSteps" class="btn ghost" data-i18n="showSteps"></button>
+        </div>
+      </div>
+
+      <!-- STEP BY STEP -->
+      <div id="steps" class="card" hidden>
+        <h2 id="schemeName"></h2>
+        <p id="stepCount" class="count"></p>
+        <p id="stepText" class="big" aria-live="polite"></p>
+        <div class="row">
+          <button id="prev" class="btn ghost" data-i18n="prev"></button>
+          <button id="readStep" class="btn primary" data-i18n="read"></button>
+          <button id="next" class="btn ghost" data-i18n="next"></button>
+        </div>
+        <button id="dontStep" class="btn warm" data-i18n="dontGet"></button>
+      </div>
+    </section>
+
+    <!-- HELP / ABOUT -->
+    <section id="helpView" class="view" hidden>
+      <div class="card">
+        <h2 data-i18n="helpNav"></h2>
+        <p class="big" id="aboutText"></p>
+        <h3 data-i18n="docs"></h3>
+        <ul id="docList"></ul>
+        <h3 data-i18n="who"></h3>
+        <p id="whoText"></p>
+        <p id="helpText"></p>
+        <a id="officialLink" class="btn primary linkbtn" target="_blank" rel="noopener" data-i18n="official"></a>
+        <p class="safe" data-i18n="safe"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="scheme.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

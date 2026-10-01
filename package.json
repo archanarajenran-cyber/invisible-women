@@ -1,0 +1,7 @@
+{
+  "name": "invisible-woman",
+  "version": "1.0.0",
+  "description": "Tamil voice assistant that helps women use one government scheme",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}
